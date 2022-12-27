@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "backend-server"
+name = "backend_server"
 version = "0.1.0"
 description = ""
 authors = ["None"]
