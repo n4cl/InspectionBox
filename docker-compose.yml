@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/usr/local/backend
+    container_name: backend
