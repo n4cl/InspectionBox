@@ -6,4 +6,4 @@ COPY ./ /usr/local/backend/
 WORKDIR /usr/local/backend
 RUN poetry install
 
-CMD ["poetry", "run", "uvicorn", "app:app"]
+CMD ["poetry", "run", "uvicorn", "app:app", "--host", "0.0.0.0"]
