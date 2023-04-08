@@ -1,11 +1,13 @@
 version: "3.8"
 services:
-  reverse_proxy:
+  frontend:
     build:
-      context: ./reverse_proxy
+      context: ./frontend
+    volumes:
+      - ./frontend/app:/usr/share/nginx/html
     ports:
        - "80:80"
-    container_name: reverse_proxy
+    container_name: frontend
   backend:
     build:
       context: ./backend
