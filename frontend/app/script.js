@@ -4,15 +4,18 @@ document.getElementById("btn_request").addEventListener("click", function() {
   let original_url = uri.origin
   let url = original_url + "/backend"
 
-  var params = "message=" + encodeURIComponent(document.getElementById("g_p_mtext").value);
+  let text_area = document.getElementById("g_p_mtext").value;
+  let data = JSON.stringify({text: text_area});
+
   xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
   xhr.onreadystatechange = function() {
     if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       document.getElementById("g_r_mtext").value = xhr.responseText;
     }
   }
-  xhr.send(params);
+  xhr.send(data);
 });
 
 
